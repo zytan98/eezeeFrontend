@@ -1,5 +1,5 @@
 import React from 'react'
-import { Layout, Card, Row, Col, Divider } from 'antd'
+import { Layout, Card, Row, Col, Divider, Typography } from 'antd'
 import banner from '../../../Assets/banner.png'
 import mk from '../../../Assets/MK.svg'
 import abb from '../../../Assets/ABB.png'
@@ -120,7 +120,7 @@ const Home = () => {
                   return (
                     <Col span={4}>
                       <Link to={products[0]}>
-                        <Card style={{ height: '350px',minHeight:'350px' }}>
+                        <Card style={{ height: '350px', minHeight: '350px' }}>
                           <div
                             style={{
                               height: '150px',
@@ -154,8 +154,10 @@ const Home = () => {
                                 </Row>
                               </div>
                             }
-                            description={products[3]}
                           />
+                          <Typography.Paragraph ellipsis={{rows:3}}>
+                            {products[3]}
+                          </Typography.Paragraph>
                         </Card>
                       </Link>
                     </Col>
