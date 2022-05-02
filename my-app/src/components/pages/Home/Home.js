@@ -78,7 +78,7 @@ const Home = () => {
                 {brandInfo.map(brands => {
                   return (
                     <Col span={4}>
-                      <Card style={{ textAlign: 'center' }} bodyStyle={{}}>
+                      <Card style={{ textAlign: 'center' }}>
                         <div
                           style={{
                             height: '60px',
@@ -155,7 +155,7 @@ const Home = () => {
                               </div>
                             }
                           />
-                          <Typography.Paragraph ellipsis={{rows:3}}>
+                          <Typography.Paragraph ellipsis={{ rows: 3 }}>
                             {products[3]}
                           </Typography.Paragraph>
                         </Card>

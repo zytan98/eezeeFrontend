@@ -1,19 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import {
-  Layout,
-  Row,
-  Col,
-  Badge,
-  Button,
-  Input,
-  Divider,
-  Breadcrumb
-} from 'antd'
-import Icon, {
-  PhoneOutlined,
-  ShoppingCartOutlined,
-  SearchOutlined
-} from '@ant-design/icons'
+import { Layout, Row, Col, Badge, Button, Input } from 'antd'
+import Icon, { PhoneOutlined, SearchOutlined } from '@ant-design/icons'
 import flag from '../../Assets/Flag.png'
 import logo from '../../Assets/Logo.png'
 import { ReactComponent as Cart } from '../../Assets/Cart.svg'
@@ -21,11 +8,13 @@ import './Navbar.css'
 import { Link } from 'react-router-dom'
 
 const Navbar = props => {
-  const { Header } = Layout
+  //Check if there is a counter for cart in session storage
   if (sessionStorage.getItem('cart') == null) {
     sessionStorage.setItem('cart', 0)
   }
+  //set counter'scount to session storage's cart information
   const [counter, setCounter] = useState(JSON.parse(sessionStorage.cart))
+  //if product has been added to cart, update cart's counter value
   useEffect(() => {
     const item = sessionStorage.getItem('cart')
     if (item) {

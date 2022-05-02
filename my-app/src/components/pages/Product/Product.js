@@ -90,19 +90,23 @@ const Product = () => {
         break
     }
   }, [])
-
+  //Create a checkpoint for the carousel
   const ref = useRef()
+  //refer to the last checkpoint of the carousel and go to the slide number indicated
   const goTo = slide => {
     ref.current.goTo(slide, true)
   }
+  //add 1 to the input
   function addQuantity () {
     setQuantity(quantity + 1)
   }
+  //minus 1 to the input if it is more than 1
   function minusQuantity () {
     if (quantity > 1) {
       setQuantity(quantity - 1)
     }
   }
+  //add the product to the cart
   function addtoCart () {
     const currentQuantity = JSON.parse(sessionStorage.getItem('cart'))
     sessionStorage.setItem('cart', currentQuantity + 1)
