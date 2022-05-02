@@ -78,11 +78,10 @@ const Home = () => {
                 {brandInfo.map(brands => {
                   return (
                     <Col span={4}>
-                      <Card style={{ textAlign: 'center',minWidth:'135px' }} bodyStyle={{}}>
+                      <Card style={{ textAlign: 'center' }} bodyStyle={{}}>
                         <div
                           style={{
                             height: '60px',
-                            width: '135px',
                             margin: 'auto'
                           }}
                         >
@@ -121,11 +120,10 @@ const Home = () => {
                   return (
                     <Col span={4}>
                       <Link to={products[0]}>
-                        <Card style={{ height: '350px',minWidth:'120px' }}>
+                        <Card style={{ height: '350px',minHeight:'350px' }}>
                           <div
                             style={{
                               height: '150px',
-                              width: '120px',
                               margin: 'auto',
                               padding: 10
                             }}
