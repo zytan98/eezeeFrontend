@@ -65,14 +65,16 @@ const Home = () => {
             <Card
               title={
                 <>
-                  <h1>Featured Brands</h1>
-                  <h4> Browse the full catalog of brands today</h4>
+                  <h1>
+                    <b>Featured Brands</b>
+                  </h1>
+                  <h5> Browse the full catalog of brands today</h5>
                 </>
               }
               style={{ height: '158', backgroundColor: '#F7F7F8', border: 0 }}
               headStyle={{ border: 0 }}
               extra={
-                <a href='#'>
+                <a href=''>
                   View All
                   <RightOutlined />
                 </a>
@@ -113,8 +115,10 @@ const Home = () => {
             <Card
               title={
                 <>
-                  <h1>Our Most Popular Products</h1>
-                  <h4>Trusted by the best companies in Asia</h4>
+                  <h1>
+                    <b>Our Most Popular Products</b>
+                  </h1>
+                  <h5>Trusted by the best companies in Asia</h5>
                 </>
               }
               style={{ backgroundColor: '#F7F7F8', border: 0 }}
