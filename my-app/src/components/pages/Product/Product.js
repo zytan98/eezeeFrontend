@@ -69,7 +69,7 @@ const Product = () => {
         setPrice('S$ 3.04')
         break
       case '5':
-        setDesc(['Safety Jogger Safety Shoe Dakar S3\nHI\nLOL'])
+        setDesc(['Safety Jogger Safety Shoe Dakar S3'])
         setTitle('Safety Jogger Safety Shoe Dakar S3')
         setModel(['Dakar-S3', 'SAFETY JOGGER'])
         setPictures([item51, item52, item53, item54])
