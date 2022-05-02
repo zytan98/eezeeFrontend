@@ -1,5 +1,5 @@
 import React from 'react'
-import { Layout, Card, Row, Col, Divider, Typography } from 'antd'
+import { Layout, Card, Row, Col, Typography } from 'antd'
 import banner from '../../../Assets/banner.png'
 import mk from '../../../Assets/MK.svg'
 import abb from '../../../Assets/ABB.png'
@@ -53,7 +53,11 @@ const Home = () => {
       <Content>
         <Row style={{ padding: 20 }}>
           <Col offset={5} span={14}>
-            <img style={{ height: '100%', width: '100%' }} src={banner} />
+            <img
+              alt=''
+              style={{ height: '100%', width: '100%' }}
+              src={banner}
+            />
           </Col>
         </Row>
         <Row>
@@ -86,6 +90,7 @@ const Home = () => {
                           }}
                         >
                           <img
+                            alt=''
                             src={brands[0]}
                             style={{
                               height: '100%',
@@ -129,6 +134,7 @@ const Home = () => {
                             }}
                           >
                             <img
+                              alt=''
                               src={products[1]}
                               style={{
                                 height: '100%',

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Layout, Row, Col, Badge, Button, Input } from 'antd'
+import { Row, Col, Badge, Button, Input } from 'antd'
 import Icon, { PhoneOutlined, SearchOutlined } from '@ant-design/icons'
 import flag from '../../Assets/Flag.png'
 import logo from '../../Assets/Logo.png'
@@ -25,7 +25,7 @@ const Navbar = props => {
     <>
       <Row gutter={16} style={{ backgroundColor: '#F7F7F8' }}>
         <Col offset={5} span={2}>
-          <img src={flag} width='21' height='14' />
+          <img alt='' src={flag} width='21' height='14' />
           Singapore
         </Col>
         <Col>
@@ -37,7 +37,7 @@ const Navbar = props => {
         <Row>
           <Col offset={5} span={3}>
             <Link to='/'>
-              <img src={logo} />
+              <img alt='' src={logo} />
             </Link>
           </Col>
           <Col span={6}>
@@ -73,7 +73,7 @@ const Navbar = props => {
         </Row>
         <Row gutter={[16, 16]}>
           <Col offset={5} span={3}>
-            <a href='#'>View All items</a>
+            <a href=''>View All items</a>
           </Col>
         </Row>
       </div>

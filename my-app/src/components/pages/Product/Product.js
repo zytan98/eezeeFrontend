@@ -124,10 +124,10 @@ const Product = () => {
                   <>
                     <h1>{title}</h1>
                     <h5>
-                      Model:<a href='#'>{model ? model[0] : <Skeleton />}</a>
+                      Model:<a href=''>{model ? model[0] : <Skeleton />}</a>
                     </h5>
                     <h5>
-                      Brand:<a href='#'>{model ? model[1] : <Skeleton />}</a>
+                      Brand:<a href=''>{model ? model[1] : <Skeleton />}</a>
                     </h5>
                   </>
                 }
