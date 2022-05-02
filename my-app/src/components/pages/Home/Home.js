@@ -19,6 +19,32 @@ import Navbar from '../../navbar/Navbar'
 import './Home.css'
 
 const Home = () => {
+  const brandInfo = [
+    [abb, 'ABB', '321 Products'],
+    [auralight, 'AURA LIGHT', '321 Products'],
+    [pelican, 'PELICAN', '321 Products'],
+    [mk, 'MK', '321 Products'],
+    [bluescope, 'LYSAGHT', '321 Products'],
+    [eaton, 'EATON', '321 Products']
+  ]
+  const productInfo = [
+    [
+      '/product/1',
+      item1,
+      '120.22',
+      'Philips S10 Starter Fluo 4-65w 220-240v 350332'
+    ],
+    ['/product/2', item2, '94.34', '04900008100 Philips Mhn-td 70w/842 Rx7s'],
+    ['/product/3', item3, '23.00', 'Pelican 2755 3xaaa Headlight C1d1'],
+    ['/product/4', item4, '3.04', 'Led Indicator Bulb Ba9s Red'],
+    ['/product/5', item5, '85.00', 'Safety Jogger Safety Shoe Dakar S3'],
+    [
+      '/product/6',
+      item6,
+      '53.93',
+      'Portable Lightweight Plastic Curb Ramps Heavy Duty Plastic Kit Set for Driveway Car Truck'
+    ]
+  ]
   const { Content } = Layout
   const { Meta } = Card
   return (
@@ -49,111 +75,31 @@ const Home = () => {
               }
             >
               <Row gutter={8}>
-                <Col span={4}>
-                  <Card style={{ textAlign: 'center' }} bodyStyle={{}}>
-                    <div
-                      style={{ height: '60px', width: '135px', margin: 'auto' }}
-                    >
-                      <img
-                        src={abb}
-                        style={{
-                          height: '100%',
-                          width: '100%',
-                          paddingBottom: '20px'
-                        }}
-                      />
-                    </div>
-                    <Meta title='ABB' description='321 Products' />
-                  </Card>
-                </Col>
-                <Col span={4}>
-                  <Card style={{ textAlign: 'center' }}>
-                    <div
-                      style={{ height: '60px', width: '135px', margin: 'auto' }}
-                    >
-                      <img
-                        src={auralight}
-                        style={{
-                          height: '100%',
-                          width: '100%',
-                          paddingBottom: '20px'
-                        }}
-                      />
-                    </div>
-                    <Meta title='AURA LIGHT' description='321 Products' />
-                  </Card>
-                </Col>
-                <Col span={4}>
-                  <Card style={{ textAlign: 'center' }}>
-                    <div
-                      style={{ height: '60px', width: '135px', margin: 'auto' }}
-                    >
-                      <img
-                        src={pelican}
-                        style={{
-                          height: '100%',
-                          width: '100%',
-                          paddingBottom: '20px'
-                        }}
-                      />
-                    </div>
-
-                    <Meta title='PELICAN' description='321 Products' />
-                  </Card>
-                </Col>
-                <Col span={4}>
-                  <Card style={{ textAlign: 'center' }}>
-                    <div
-                      style={{ height: '60px', width: '135px', margin: 'auto' }}
-                    >
-                      <img
-                        src={mk}
-                        style={{
-                          height: '100%',
-                          width: '100%',
-                          paddingBottom: '20px'
-                        }}
-                      />
-                    </div>
-
-                    <Meta title='MK' description='321 Products' />
-                  </Card>
-                </Col>
-                <Col span={4}>
-                  <Card style={{ textAlign: 'center' }}>
-                    <div
-                      style={{ height: '60px', width: '135px', margin: 'auto' }}
-                    >
-                      <img
-                        src={bluescope}
-                        style={{
-                          height: '100%',
-                          width: '100%',
-                          paddingBottom: '20px'
-                        }}
-                      />
-                    </div>
-                    <Meta title='LYSAGHT' description='321 Products' />
-                  </Card>
-                </Col>
-                <Col span={4}>
-                  <Card style={{ textAlign: 'center' }}>
-                    <div
-                      style={{ height: '60px', width: '135px', margin: 'auto' }}
-                    >
-                      <img
-                        src={eaton}
-                        style={{
-                          height: '100%',
-                          width: '100%',
-                          paddingBottom: '20px'
-                        }}
-                      />
-                    </div>
-
-                    <Meta title='EATON' description='321 Products' />
-                  </Card>
-                </Col>
+                {brandInfo.map(brands => {
+                  return (
+                    <Col span={4}>
+                      <Card style={{ textAlign: 'center',minWidth:'135px' }} bodyStyle={{}}>
+                        <div
+                          style={{
+                            height: '60px',
+                            width: '135px',
+                            margin: 'auto'
+                          }}
+                        >
+                          <img
+                            src={brands[0]}
+                            style={{
+                              height: '100%',
+                              width: '100%',
+                              paddingBottom: '20px'
+                            }}
+                          />
+                        </div>
+                        <Meta title={brands[1]} description={brands[2]} />
+                      </Card>
+                    </Col>
+                  )
+                })}
               </Row>
             </Card>
           </Col>
@@ -171,163 +117,52 @@ const Home = () => {
               headStyle={{ border: 0 }}
             >
               <Row gutter={8}>
-                <Col span={4}>
-                  <Link to='/product/1'>
-                    <Card style={{ height: '350px' }}>
-                      <div
-                        style={{
-                          height: '150px',
-                          width: '120px',
-                          margin: 'auto',
-                          padding: 10
-                        }}
-                      >
-                        <img
-                          src={item1}
-                          style={{
-                            height: '100%',
-                            width: '100%'
-                          }}
-                        />
-                      </div>
-
-                      <Meta
-                        title='S$ 120.22'
-                        description='Philips S10 Starter Fluo 4-65w 220-240v 350332'
-                      />
-                    </Card>
-                  </Link>
-                </Col>
-                <Col span={4}>
-                  <Link to='/product/2'>
-                    <Card style={{ height: '350px' }}>
-                      <div
-                        style={{
-                          height: '150px',
-                          width: '120px',
-                          margin: 'auto',
-                          padding: 10
-                        }}
-                      >
-                        <img
-                          src={item2}
-                          style={{
-                            height: '100%',
-                            width: '100%'
-                          }}
-                        />
-                      </div>
-                      <Meta
-                        title='S$ 94.34'
-                        description='04900008100 Philips Mhn-td 70w/842 Rx7s'
-                      />
-                    </Card>
-                  </Link>
-                </Col>
-                <Col span={4}>
-                  <Link to='/product/3'>
-                    <Card style={{ height: '350px' }}>
-                      <div
-                        style={{
-                          height: '150px',
-                          width: '120px',
-                          margin: 'auto',
-                          padding: 10
-                        }}
-                      >
-                        <img
-                          src={item3}
-                          style={{
-                            height: '100%',
-                            width: '100%'
-                          }}
-                        />
-                      </div>
-                      <Meta
-                        title='S$ 23.00'
-                        description='Pelican 2755 3xaaa Headlight C1d1'
-                      />
-                    </Card>
-                  </Link>
-                </Col>
-                <Col span={4}>
-                  <Link to='/product/4'>
-                    <Card style={{ height: '350px' }}>
-                      <div
-                        style={{
-                          height: '150px',
-                          width: '120px',
-                          margin: 'auto',
-                          padding: 10
-                        }}
-                      >
-                        <img
-                          src={item4}
-                          style={{
-                            height: '100%',
-                            width: '100%'
-                          }}
-                        />
-                      </div>
-                      <Meta
-                        title='S$ 3.04'
-                        description='Led Indicator Bulb Ba9s Red'
-                      />
-                    </Card>
-                  </Link>
-                </Col>
-                <Col span={4}>
-                  <Link to='/product/5'>
-                    <Card style={{ height: '350px' }}>
-                      <div
-                        style={{
-                          height: '150px',
-                          width: '120px',
-                          margin: 'auto',
-                          padding: 10
-                        }}
-                      >
-                        <img
-                          src={item5}
-                          style={{
-                            height: '100%',
-                            width: '100%'
-                          }}
-                        />
-                      </div>
-                      <Meta
-                        title='S$ 85.00'
-                        description='Safety Jogger Safety Shoe Dakar S3'
-                      />
-                    </Card>
-                  </Link>
-                </Col>
-                <Col span={4}>
-                  <Link to='/product/6'>
-                    <Card style={{ height: '350px' }}>
-                      <div
-                        style={{
-                          height: '150px',
-                          width: '120px',
-                          margin: 'auto',
-                          padding: 10
-                        }}
-                      >
-                        <img
-                          src={item6}
-                          style={{
-                            height: '100%',
-                            width: '100%'
-                          }}
-                        />
-                      </div>
-                      <Meta
-                        title='S$ 53.93'
-                        description='Portable Lightweight Plastic Curb Ramps Heavy Duty Plastic Kit Set for Driveway Car Truck'
-                      />
-                    </Card>
-                  </Link>
-                </Col>
+                {productInfo.map(products => {
+                  return (
+                    <Col span={4}>
+                      <Link to={products[0]}>
+                        <Card style={{ height: '350px',minWidth:'120px' }}>
+                          <div
+                            style={{
+                              height: '150px',
+                              width: '120px',
+                              margin: 'auto',
+                              padding: 10
+                            }}
+                          >
+                            <img
+                              src={products[1]}
+                              style={{
+                                height: '100%',
+                                width: '100%'
+                              }}
+                            />
+                          </div>
+                          <Meta
+                            title={
+                              <div>
+                                <Row>
+                                  <h6
+                                    style={{
+                                      color: '#2A64DB',
+                                      paddingRight: 5
+                                    }}
+                                  >
+                                    <b>S$</b>
+                                  </h6>
+                                  <div style={{ color: '#2A64DB' }}>
+                                    <b>{products[2]}</b>
+                                  </div>
+                                </Row>
+                              </div>
+                            }
+                            description={products[3]}
+                          />
+                        </Card>
+                      </Link>
+                    </Col>
+                  )
+                })}
               </Row>
             </Card>
           </Col>

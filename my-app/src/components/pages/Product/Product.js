@@ -23,6 +23,7 @@ import {
   Skeleton,
   Form
 } from 'antd'
+import './Product.css'
 import { PlusOutlined, MinusOutlined } from '@ant-design/icons'
 
 const Product = () => {
@@ -36,8 +37,6 @@ const Product = () => {
   const [desc, setDesc] = useState()
   const [title, setTitle] = useState()
   const [model, setModel] = useState()
-  const [desc2, setDesc2] = useState(false)
-  const [desc3, setDesc3] = useState(false)
   const { Meta } = Card
   useEffect(() => {
     switch (id) {
@@ -108,25 +107,12 @@ const Product = () => {
     const currentQuantity = JSON.parse(sessionStorage.getItem('cart'))
     sessionStorage.setItem('cart', currentQuantity + 1)
   }
-
-  const btnNorm = {
-    width: '60px',
-    height: '40px',
-    margin: '20px',
-    border: 0
-  }
-  const btnSelected = {
-    width: '60px',
-    height: '40px',
-    margin: '20px',
-    border: 'solid 1px blue'
-  }
   const { Content } = Layout
   return (
     <>
-      <Layout style={{ backgroundColor: '#F7F7F8' }}>
+      <Layout className='layout'>
         <Navbar reload={reload} product={productCrumbs} />
-        <Content style={{ height: '100vh' }}>
+        <Content className='content'>
           <Row gutter={14} style={{ paddingTop: 20 }}>
             <Col offset={5} span={9}>
               <Card
@@ -142,13 +128,7 @@ const Product = () => {
                   </>
                 }
               >
-                <div
-                  style={{
-                    height: '300px',
-                    width: '300px',
-                    margin: 'auto'
-                  }}
-                >
+                <div className='carouselFrame'>
                   <Carousel ref={ref} dots={false}>
                     {pictures ? (
                       pictures.map(pics => {
@@ -157,12 +137,7 @@ const Product = () => {
                             <img
                               alt=''
                               src={pics}
-                              style={{
-                                height: '100%',
-                                width: '100%',
-                                maxHeight: '300px',
-                                maxWidth: '300px'
-                              }}
+                              className='carouselPictures'
                             />
                           </div>
                         )
@@ -185,7 +160,9 @@ const Product = () => {
                         <img
                           alt=''
                           src={pics}
-                          style={selected === index ? btnSelected : btnNorm}
+                          className={
+                            selected === index ? 'btnSelected' : 'btnNorm'
+                          }
                           onClick={() => {
                             goTo(index)
                             setSelected(index)
@@ -210,7 +187,7 @@ const Product = () => {
                       <Button
                         style={{ verticalAlign: 'middle' }}
                         onClick={() => minusQuantity()}
-                        icon={<MinusOutlined style={{ color: '#2A64DB' }} />}
+                        icon={<MinusOutlined className='darkBlue' />}
                       ></Button>
                       <Input
                         style={{ textAlign: 'center', width: '20%' }}
@@ -219,7 +196,7 @@ const Product = () => {
                       <Button
                         style={{ verticalAlign: 'middle' }}
                         onClick={() => addQuantity()}
-                        icon={<PlusOutlined style={{ color: '#2A64DB' }} />}
+                        icon={<PlusOutlined className='darkBlue' />}
                       ></Button>
                     </Input.Group>
                   </Form.Item>
