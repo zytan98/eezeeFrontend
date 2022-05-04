@@ -43,6 +43,7 @@ const Navbar = props => {
           <Col span={6}>
             <Input
               style={{ borderRadius: '25px' }}
+              placeholder="Search Products Here"
               allowClear
               suffix={
                 <Button

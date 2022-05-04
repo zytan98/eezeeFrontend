@@ -84,7 +84,7 @@ const Home = () => {
                 {brandInfo.map(brands => {
                   return (
                     <Col span={4}>
-                      <Card style={{ textAlign: 'center' }}>
+                      <Card style={{ textAlign: 'center' }} >
                         <div
                           style={{
                             height: '60px',
